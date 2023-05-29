@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Hongshi Cement</title>
-        <link rel="shortcut icon" href="image/Logo.jpg">
-        <link rel="stylesheet" type="text/css" href="about_us.css">
+        <link rel="shortcut icon" href="../images/Logo.jpg">
+        <link rel="stylesheet" type="text/css" href="../css/about_us.css">
     </head>
     <body>
         <div class="box-area">
@@ -22,7 +22,7 @@
             </header>
             <div class="banner-area"></div>
             <div class="item">
-                <img src="image/handcement.jpg">
+                <img src="../images/handcement.jpg">
             </div>
             <div class="about us">
                 <br><br><br>

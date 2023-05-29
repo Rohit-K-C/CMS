@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Hongshi Cement</title>
-        <link rel="shortcut icon" href="image/Logo.jpg">
-        <link rel="stylesheet" type="text/css" href="order_online.css">
+        <link rel="shortcut icon" href="../images/Logo.jpg">
+        <link rel="stylesheet" type="text/css" href="../css/order_online.css">
     </head>
     <body>
         <div class="box-area">
@@ -12,7 +12,7 @@
                     <div class="logo"><h1><a href="#">Honghshi</a></h1></div>
                     <nav>
                         <div class="nav-menu">
-                            <a href="index.php">Home</a>
+                            <a href="index.php">Home</a>    
                             <a href="about_us.php">About Us</a>
                             <a href="#" id="order_online">Order Online</a>
                             <a href="contactus.php">Contact Us</a>
@@ -22,7 +22,7 @@
             </header>
             <section class="trending-prodects" id="trending">
                 <div class="item">
-                    <img src="image/order.jpg">
+                    <img src="../images/order.jpg">
                 </div>
                 <div class="center-text">
                     <h5>Our Prodects</h5>
@@ -32,7 +32,7 @@
                         <img src="image/thumb.jpg">
                     </div>--> 
                     <div class="row">
-                        <img src="image/opc-cement.png" alt="">
+                        <img src="../images/opc-cement.png" alt="">
                         <div class="product-text">
                             <h5>Honghshi Center(OPC)-50KG</h5>
                         </div>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <img src="image/cement-ppc.png" alt="">
+                        <img src="../images/cement-ppc.png" alt="">
                         <div class="product-text">
                             <h5>Honghshi Center(PPC)-50KG</h5>
                         </div>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <img src="image/opc-cement.png" alt="">
+                        <img src="../images/opc-cement.png" alt="">
                         <div class="product-text">
                             <h5>Honghshi Center(OPC-53 Grade)-50KG</h5>
                         </div>

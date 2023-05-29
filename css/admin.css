@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-align: center;
+}
+.wrapper {
+  width: 1170px;
+  margin: 0 auto;
+}
+header {
+  height: 100px;
+  background: red;
+  width: 100%;
+  display: flex;
+}
+.logo {
+  width: 30%;
+  float: left;
+  line-height: 100px;
+}
+.logo a {
+  text-decoration: none;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: Lucid-Sans-Unicode;
+  color: white;
+  letter-spacing: 5px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  line-height: 100px;
+ 
+}
+nav a {
+  text-decoration: none;
+  font-family: Courier-New;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 18px;
+  margin: 10px;
+  color: white;
+}
+nav a:hover {
+  color: rosybrown;
+}
+.dropdown {
+  background-color: red;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 30px;
+  outline: none;
+  color: white;
+}
+select {
+  font-size: 20px;
+  font-family: Courier-New;
+}
+.add_product{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.add_product form{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    width: 200px;
+    padding: 20px;
+}
+.add_product form input[type='text'], input[type='number']{
+    width: 170px;
+    height: 20px;
+
+}
+select{
+    width: 170px;
+    height: 20px;
+    font-size: 13px;
+
+}
+#submit{
+    width: 170px;
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+
+.upload-image{
+	height: 200px;
+	width: 200px;
+}
+#image{
+	height: 100%;
+	width: 100%;
+}
+#file{
+	display: none;
+}
+#uploadBtn{
+  width: 200px !important;
+
+}
+#uploadBtn:hover{
+	background-color: beige
+}
+#image{
+  position: absolute;
+  right: 30px;
+  top: 110px;
+	margin-top: 10px;
+	height: 415px;
+	width: 415px;
+	
+
+
+}
+img[src=""] {
+    display: none;
+}
+#message{
+  width: 170px;
+}
+.upload-pic{
+  width: 170px;
+  border: 1px solid black;
+  height: 20px;
+}
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.table-content{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
