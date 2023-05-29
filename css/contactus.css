@@ -1,0 +1,247 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    text-align: center;
+}
+.wrapper{
+    width: 1170px;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    background: red;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+}
+.logo{
+   width: 30%;
+   float: left;
+   line-height: 100px;
+}
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: Lucid-Sans-Unicode;
+    color: white;
+    letter-spacing: 5px;
+}
+nav{
+    float: right;
+    line-height: 100px;
+}
+nav a{
+    text-decoration: none;
+    font-family: Courier-New;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 18px;
+    margin: 10px;
+    color: white;
+}
+nav a:hover{
+    color: rosybrown;
+}
+.banner-area{
+    position: relative;
+    width: 100%;
+    padding: 70px 100px;
+}
+/*.item img{
+    width: 100%;
+    height: 550px;
+}*/
+.banner-area .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.banner-area .title h2{
+    color: black;
+    font-weight: 500;
+    padding: 40px;
+}
+.form{
+    grid-area: form;
+}
+.info{
+    grid-area: info;
+}
+.map{
+    grid-area: map;
+}
+.contact{
+    padding: 40px;
+    background: black;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+}
+.box{
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: "form info" "form map";
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+.contact h3{
+    color: white;
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+/*form*/
+.formBox{
+    position: relative;
+    width: 100%;
+}
+.formBox .row50{
+    display: flex;
+    gap: 20px;
+}
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+.formBox .row100 .inputBox{
+    width: 100%;
+}
+.inputBox span{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.inputBox input{
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid black;
+}
+.inputBox textarea{
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid black;
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+.inputBox input[type="submit"]{
+    background: red;
+    color: black;
+    border: none;
+    font-size: 1.1em;
+    max-width: 120px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 14px 15px;
+}
+.inputBox ::placeholder{
+    color: black;
+}
+/*info*/
+.info .infobox div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.info .infobox div span{
+    min-width: 40px;
+    height: 40px;
+    color: white;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.info .infobox div p{
+    color: white;
+}
+.info .infobox div a{
+    color: white;
+    text-decoration: none;
+}
+.map{
+    padding: 0;
+}
+.map iframe{
+    width: 100%;
+    height: 100%;
+}
+footer{
+    bottom: 0;
+    padding-top: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+h3{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.para{
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+}
+.container{
+    max-width: 1170px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.last{
+    margin: 0 15px 25px;
+    box-shadow: 0 1px 3px;
+    border-radius: 1px;
+    width: 35%;
+    position: relative;
+    flex-basis: 33%;
+}
+.about{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.button2{
+    margin: 20px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .5s ease;
+    background: red;
+    color: white;
+}
+.button2:hover{
+    background: rosybrown;
+}
+quick a{
+    text-decoration: none;
+    font-family: Courier-New;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 15px;
+    margin: 0 10px;
+    color: white;
+}
+.copyright{
+    background: red;
+    padding: 30px;
+}

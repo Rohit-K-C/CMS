@@ -1,0 +1,180 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    text-align: center;
+}
+.wrapper{
+    width: 1170px;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    background: red;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+}
+.logo{
+   width: 20%;
+   float: left;
+   line-height: 100px;
+}
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: Lucid-Sans-Unicode;
+    color: white;
+    letter-spacing: 5px;
+}
+nav{
+    float: right;
+    line-height: 100px;
+}
+nav a{
+    text-decoration: none;
+    font-family: Courier-New;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 18px;
+    margin: 10px;
+    color: white;
+}
+nav a:hover{
+    color: rosybrown;
+}
+.banner-area{
+    width: 100%;
+    height: 100px;
+    top: 100px;
+    background-size: cover;
+}
+.item img{
+    width: 105%;
+    height: 550px;
+}
+.title{
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 50px;
+    font-family: 'Barlow Condensed',sans-serif;
+    text-align: left;
+    color: brown;
+}
+.which{
+    padding-right: 70px;
+    font-size: 20px;
+    font-family: 'Barlow Condensed',sans-serif;
+    text-align: justify;
+    color: brown;
+}
+.success{
+    width: 20%;
+    float: right;
+    line-height: 100px;
+ }
+ .success a{
+     text-decoration: none;
+     font-size: 30px;
+     text-transform: uppercase;
+     font-family: Lucid-Sans-Unicode;
+     color: white;
+     letter-spacing: 5px;
+ }
+ .benchmark{
+    width: 20%;
+    float: left;
+    line-height: 100px;
+ }
+ .benchmark a{
+     text-decoration: none;
+     font-size: 30px;
+     text-transform: uppercase;
+     font-family: Lucid-Sans-Unicode;
+     color: white;
+     letter-spacing: 5px;
+ }
+ .defstan{
+    width: 30%;
+    float: right;
+    line-height: 100px;
+ }
+ .defstan a{
+     text-decoration: none;
+     font-size: 30px;
+     text-transform: uppercase;
+     font-family: Lucid-Sans-Unicode;
+     color: white;
+     letter-spacing: 5px;
+ }
+footer{
+    bottom: 0;
+    padding-top: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+h3{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.para{
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+}
+.container{
+    max-width: 1170px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.last{
+    margin: 0 15px 25px;
+    box-shadow: 0 1px 3px;
+    border-radius: 1px;
+    width: 35%;
+    position: relative;
+    flex-basis: 33%;
+}
+.about{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.button2{
+    margin: 20px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all .5s ease;
+    background: red;
+    color: white;
+}
+.button2:hover{
+    background: rosybrown;
+}
+quick a{
+    text-decoration: none;
+    font-family: Courier-New;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 15px;
+    margin: 0 10px;
+    color: white;
+}
+.copyright{
+    background: red;
+    padding: 30px;
+}
