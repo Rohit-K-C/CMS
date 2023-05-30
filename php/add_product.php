@@ -50,7 +50,7 @@
                 <div class="upload-pic">
                     <img src="" id="image">
                     <input type="file" id="file" name="uploadfile">
-                    <label for="file" id="uploadBtn">Image</label>
+                    <label class="imageUp" for="file" id="uploadBtn">Image</label>
                 </div>
 
             </div>
@@ -58,7 +58,7 @@
 
             <label for="">Product Category:
                 <br>
-                <select name="category">
+                <select id="addCat" name="category">
                     <option value="PPC">PPC</option>
                     <option value="OPC">OPC</option>
                     <option value="50 grade">50 grade</option>
@@ -80,7 +80,7 @@
                 <input type="number" name="price" id="price">
             </label>
             <br>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit" id="submit">
         </form>
 
     </div>

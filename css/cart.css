@@ -1,0 +1,39 @@
+.cart {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+}
+#cart_line {
+  position: relative;
+  width: 80%;
+  margin-left: 150px;
+  top: -15px;
+}
+table {
+  position: relative;
+  top: 200px;
+  left: 200px;
+}
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+#cart_image{
+    width: 100px;
+    height: 100px;
+}
+#cartDel{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+
+}
+#cartDel:hover{
+    color: red;
+
+}

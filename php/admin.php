@@ -17,11 +17,12 @@
             </div>
             <nav>
                 <div class="nav_menu">
-                    <a href="../php/admin.php" id="Home">Home</a>
-                    <a href="../php/add_product.php" id="add_product">Add Product</a>
-                    <a href="../php/all.php" id="index">All product</a>
+                    <a href="../php/admin.php" id="index">Home</a>
+                    <a href="../php/add_product.php">Add Product</a>
+                    <a href="../php/all.php">All Product</a>
+
                     <select class="dropdown" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                        <option value="">
+                        <option value="none" selected>
                             <?php
                             session_start();
                             if ($_SESSION['name'] == null) {

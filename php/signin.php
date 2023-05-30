@@ -2,6 +2,7 @@
 include "../php/connection.php";
 
 $username = $_POST['username'];
+
 $password = $_POST['password'];
 
 
@@ -11,6 +12,7 @@ $row = mysqli_fetch_row($sql);
 if ($row[0] > 0) {
 
     session_start();
+    $_SESSION['email'] = $username;
     $sess = mysqli_query($conn, "SELECT name from users WHERE email='$username' AND password='$password'");
     while ($sess1 = mysqli_fetch_array($sess)) {
         //$sess1 vaneko variable j rakhda ni hunxa

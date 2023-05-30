@@ -7,19 +7,37 @@
     </head>
     <body>
         <div class="box-area">
-            <header>
-                <div class="wrapper">
-                    <div class="logo"><h1><a href="#">Hongshi</a></h1></div>
-                    <nav>
-                        <div class="nav_menu">
-                            <a href="index.php">Home</a>
-                            <a href="#" id="about_us">About Us</a>
-                            <a href="order_online.php">Order Online</a>
-                            <a href="contactus.php">Contact Us</a>
-                        </div>
-                    </nav>
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <h1><a href="../php/index.php">Honghshi</a></h1>
                 </div>
-            </header>
+                <nav>
+                    <div class="nav-menu">
+                        <a href="../php/index.php">Home</a>
+                        <a href="../php/about_us.php">About Us</a>
+                        <a href="../php/order_online.php" id="order_online">Order Online</a>
+                        <a href="../php/contactus.php">Contact Us</a>
+                        <select class="dropdown" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                            <option value="">
+                                <?php
+                                session_start();
+                                if ($_SESSION['name'] == null) {
+
+                                    echo "<script>alert('Please Login!')
+                                    window.location.href='login.php';
+                                    </script>";
+                                }
+                                echo $_SESSION['name'];
+                                ?>
+                            </option>
+                            <option value="logout.php">Logout</option>
+                            <option value="my_cart.php">My Cart</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </header>
             <div class="banner-area"></div>
             <div class="item">
                 <img src="../images/handcement.jpg">

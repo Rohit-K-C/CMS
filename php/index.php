@@ -36,6 +36,7 @@
                                 ?>
                             </option>
                             <option value="logout.php">Logout</option>
+                            <option value="my_cart.php">My Cart</option>
                         </select>
                     </div>
                 </nav>

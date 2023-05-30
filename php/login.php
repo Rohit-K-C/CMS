@@ -3,11 +3,11 @@
     <head>
         <title>Login Form</title>
         <link rel="shortcut icon" href="/images/Logo.jpg">
-        <!-- <link rel="stylesheet" type="text/css" href="login.css"> -->
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
     </head>
     <body>
         <div class="loginbox">
-            <!-- <img src="../images/thumb.jpg" class="thumb"> -->
+            <img src="../images/thumb.jpg" class="thumb">
             <h1>Login Here</h1>
             <form action="signin.php" method="post">
                 <p>Username</p>
