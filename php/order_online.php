@@ -55,6 +55,7 @@
                 include "../php/connection.php";
                 $sql = mysqli_query($conn, "SELECT * FROM products");
                 while ($row = mysqli_fetch_array($sql)) {
+                    $id = $row['id'];
                     $name = $row['name'];
                     $image = $row['image'];
                     $category = $row['category'];
@@ -63,27 +64,28 @@
                     $weight = $row['weight'];
                     $manufacturer = $row['manufacturer'];
                     $price = $row['price'];
-                    ?>
+                ?>
                     <div class="row">
-                        <img id="product_image" src="<?php echo $image;?>" alt="">
+                        <img id="product_image" src="<?php echo $image; ?>" alt="">
                         <div class="product-text">
                             <div id="product_name">Honghshi Center(OPC)-50KG</div>
                             <div id="product_description">
-                                <p><b>Description: </b><?php echo $detail;?></p>
-                                <p><b>Category: </b><?php echo $category;?></p>
-                                <p><b>Quantity: </b><?php echo $quantity;?></p>
-                                <p><b>Weight: </b><?php echo $weight;?></p>
-                                <p><b>Manufacturer: </b><?php echo $manufacturer;?></p>
-    
+                                <p><b>Description: </b><?php echo $detail; ?></p>
+                                <p><b>Category: </b><?php echo $category; ?></p>
+                                <p><b>In stock: </b><?php echo $quantity; ?></p>
+                                <!-- <p><b>Select Quantity: </b><form></form></p> -->
+                                <p><b>Weight: </b><?php echo $weight; ?></p>
+                                <p><b>Manufacturer: </b><?php echo $manufacturer; ?></p>
+
                             </div>
                         </div>
                         <div class="price">
-    
-                            <p id="price">NRs. <?php echo $price;?></p>
-                            <a href="#" class="button">ADD TO CART</a>
+
+                            <p id="price">NRs. <?php echo $price; ?></p>
+                            <a href="add_to_cart.php?id=<?php echo $id; ?>" class="button">ADD TO CART</a>
                         </div>
                     </div>
-                    <?php
+                <?php
                 }
 
                 ?>
@@ -131,9 +133,10 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>Hongshi Cement @ 2022.</p>
-            </div>
+
+        </div>
+        <div class="copyright">
+            <p>Hongshi Cement @ 2022.</p>
         </div>
     </footer>
 </body>

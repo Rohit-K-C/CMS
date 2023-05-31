@@ -1,0 +1,61 @@
+* {
+    outline: none;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .loginbox {
+    background-color: #ffff;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    align-items: center;
+  }
+  .loginDiv {
+    display: flex;
+    width: 50%;
+  }
+  .formDiv {
+    display: flex;
+    flex-direction: row;
+  }
+  .formDiv form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  input[type="text"],
+  input[type='email'],
+  input[type='number'],
+  input[type="password"] {
+    width: 450px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+  }
+  input[type='submit']{
+      width: 100px;
+      padding: 10px;
+      text-align: center;
+      background-color: #386bc0;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+  input[type='submit']:hover{
+      background-color: #315da8;
+  }
+  #register{
+      font-weight: bold;
+      font-family: sans-serif;
+  }
+  #signup{
+      color: #de5571;
+      text-decoration: none;
+  }

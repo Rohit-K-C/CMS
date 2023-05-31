@@ -4,6 +4,7 @@
 }
 body{
     text-align: center;
+    background-color: #ffff;
 }
 .wrapper{
     width: 1170px;
@@ -11,7 +12,7 @@ body{
 }
 header{
     height: 100px;
-    background: red;
+    background: #f22738;
     width: 100%;
     z-index: 12;
     position: fixed;
@@ -46,19 +47,19 @@ nav a:hover{
     color: rosybrown;
 }
 .item img{
-    width: 105%;
+    width: 100%;
     height: 550px;
 }
 section{
     bottom: 0;
     padding-top: 10px;
-    background-color: white;
-    color: brown;
+    background-color: #f5f0f6;
+    color: black;
     font-family: 'Barlow Condense',sans-serif;
     padding: 100px;
 }
 h2{
-    color: brown;
+    color: black;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2px;
@@ -83,6 +84,7 @@ h2{
     width: 35%;
     position: relative;
     flex-basis: 33%;
+    
 }
 .that{
     padding-top: 10px;
@@ -93,7 +95,7 @@ h2{
 footer{
     bottom: 0;
     padding-top: 10px;
-    background-color: red;
+    background-color: #f22738;
     color: white;
     font-family: 'Barlow Condensed', sans-serif;
 }
@@ -127,6 +129,7 @@ h3{
     padding-bottom: 10px;
     padding-right: 10px;
     padding-left: 10px;
+    color: white;
 }
 .button2{
     margin: 20px;
@@ -139,7 +142,7 @@ h3{
     text-decoration: none;
     letter-spacing: 1px;
     transition: all .5s ease;
-    background: red;
+    background: #f22738;
     color: white;
 }
 .button2:hover{
@@ -155,13 +158,13 @@ quick a{
     color: white;
 }
 .copyright{
-    background: red;
+    background: #f22738;
     text-align: center;
     padding: 30px;
 }
 
 .dropdown{
-    background-color: red;
+    background-color: #f22738;
     border: 1px solid white;
     padding: 10px;
     border-radius: 30px;

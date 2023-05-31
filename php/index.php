@@ -12,7 +12,7 @@
         <header>
             <div class="wrapper">
                 <div class="logo">
-                    <h1><a href="#">Hongshi</a></h1>
+                    <h1><a href="../php/index.php">Hongshi</a></h1>
                 </div>
                 <nav>
                     <div class="nav_menu">
@@ -24,13 +24,11 @@
                             <option value="">
                                 <?php
                                 session_start();
-                                if($_SESSION['name'] == null){
+                                if ($_SESSION['name'] == null) {
 
                                     echo "<script>alert('Please Login!')
                                     window.location.href='login.php';
                                     </script>";
-                                    
-
                                 }
                                 echo $_SESSION['name'];
                                 ?>
@@ -108,9 +106,10 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>Hongshi Cement @ 2022.</p>
-            </div>
+
+        </div>
+        <div class="copyright">
+            <p>Hongshi Cement @ 2022.</p>
         </div>
     </footer>
 </body>

@@ -63,15 +63,15 @@
             <th>SUBTOTAL</th>
         </tr>
         <?php
-        
+
         include "../php/connection.php";
-        
+
         $query = "SELECT * FROM cart";
         $sql = mysqli_query($conn, $query);
         while ($row = mysqli_fetch_array($sql)) {
 
             $id = $row['id'];
-            
+
             $image = $row['image'];
             $name = $row['name'];
             $quantity = $row['quantity'];
@@ -82,14 +82,44 @@
                 <td><a id="cartDel" href="delete_cart.php?user_id=<?php echo $id; ?>"><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
                 <td><img id="cart_image" src="<?php echo "$image"; ?>" alt="product_image"></td>
                 <td><?php echo "$name"; ?></td>
-                <td><?php echo "$quantity"; ?></td>
+                <td>
+                    <form action="">
+                        <input type="number" min="1" name="qty" id="quantity-<?php echo $id; ?>" value="<?php echo $quantity; ?>" onchange="updateCartItem(<?php echo $id; ?>, this.value)">
+
+                    </form>
+                    <script>
+                        function updateCartItem(itemId, newQuantity) {
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', 'update_cart.php', true);
+                            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+
+                            xhr.onload = function() {
+                                if (xhr.status === 200) {
+                                    var responseData = JSON.parse(xhr.responseText);
+                                    var price = responseData.price;
+                                    var subtotal = responseData.subtotal;
+                                    var priceElement = document.getElementById('price-' + itemId);
+                                    var subtotalElement = document.getElementById('subtotal-' + itemId);
+
+                                    priceElement.innerText = 'Rs. ' + price;
+                                    subtotalElement.innerText = 'Rs. ' + subtotal;
+                                } else {
+                                    console.error('Error updating cart item');
+                                }
+                            };
+                            var data = 'item_id=' + encodeURIComponent(itemId) + '&quantity=' + encodeURIComponent(newQuantity);
+                            xhr.send(data);
+                        }
+                    </script>
+                </td>
                 <td><?php echo "Rs. $price"; ?></td>
                 <td>
                     <?php
-                    
+
                     $subtotal = $price * $quantity;
                     echo "Rs. $subtotal";
-                   
+
                     ?>
                 </td>
             </tr>

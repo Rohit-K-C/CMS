@@ -11,7 +11,7 @@ body{
 }
 header{
     height: 100px;
-    background: red;
+    background: #f22738;
     width: 100%;
     z-index: 12;
     position: fixed;
@@ -52,24 +52,21 @@ nav a:hover{
     background-size: cover;
 }
 .item img{
-    width: 105%;
+    width: 100%;
     height: 550px;
 }
 .title{
-    padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 50px;
+    font-size: 30px;
     font-family: 'Barlow Condensed',sans-serif;
     text-align: left;
-    color: brown;
+    color: black;
 }
 .which{
     padding-right: 70px;
     font-size: 20px;
     font-family: 'Barlow Condensed',sans-serif;
     text-align: justify;
-    color: brown;
+    color: black;
 }
 .success{
     width: 20%;
@@ -85,18 +82,11 @@ nav a:hover{
      letter-spacing: 5px;
  }
  .benchmark{
-    width: 20%;
-    float: left;
-    line-height: 100px;
+    width: 300px;
+    height: 250px;
+    margin-right: 15px;
  }
- .benchmark a{
-     text-decoration: none;
-     font-size: 30px;
-     text-transform: uppercase;
-     font-family: Lucid-Sans-Unicode;
-     color: white;
-     letter-spacing: 5px;
- }
+
  .defstan{
     width: 30%;
     float: right;
@@ -113,7 +103,7 @@ nav a:hover{
 footer{
     bottom: 0;
     padding-top: 10px;
-    background-color: red;
+    background-color: #f22738;
     color: white;
     font-family: 'Barlow Condensed', sans-serif;
 }
@@ -159,13 +149,13 @@ h3{
     text-decoration: none;
     letter-spacing: 1px;
     transition: all .5s ease;
-    background: red;
+    background: #f22738;
     color: white;
 }
 .button2:hover{
     background: rosybrown;
 }
-quick a{
+.quick a{
     text-decoration: none;
     font-family: Courier-New;
     text-transform: uppercase;
@@ -175,12 +165,12 @@ quick a{
     color: white;
 }
 .copyright{
-    background: red;
+    background: #f22738;
     padding: 30px;
 }
 
 .dropdown{
-    background-color: red;
+    background-color: #f22738;
     border: 1px solid white;
     padding: 10px;
     border-radius: 30px;
@@ -190,4 +180,15 @@ quick a{
 select{
     font-size: 20px;
     font-family: Courier-New;
+}
+.box{
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+}
+.abt-us{
+    width: 250px;
+    height: 250px;
+    margin-right: 15px;
 }

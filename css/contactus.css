@@ -11,7 +11,7 @@ body{
 }
 header{
     height: 100px;
-    background: red;
+    background: #f22738;
     width: 100%;
     z-index: 12;
     position: fixed;
@@ -47,7 +47,7 @@ nav a:hover{
 }
 .banner-area{
     position: relative;
-    width: 100%;
+    width: auto;
     padding: 70px 100px;
 }
 /*.item img{
@@ -76,7 +76,7 @@ nav a:hover{
 }
 .contact{
     padding: 40px;
-    background: black;
+    background: whitesmoke;
     box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
 }
 .box{
@@ -89,7 +89,7 @@ nav a:hover{
     margin-top: 20px;
 }
 .contact h3{
-    color: white;
+    color: black;
     font-weight: 500;
     font-size: 1.4em;
     margin-bottom: 10px;
@@ -113,7 +113,7 @@ nav a:hover{
     width: 100%;
 }
 .inputBox span{
-    color: white;
+    color: black;
     margin-top: 10px;
     margin-bottom: 5px;
     font-weight: 500;
@@ -134,7 +134,7 @@ nav a:hover{
     margin-bottom: 10px;
 }
 .inputBox input[type="submit"]{
-    background: red;
+    background: #f22738;
     color: black;
     border: none;
     font-size: 1.1em;
@@ -154,20 +154,24 @@ nav a:hover{
 }
 .info .infobox div span{
     min-width: 40px;
-    height: 40px;
-    color: white;
-    background: black;
+    
+    color: black;
+    background: white;
+    border: 1px solid black;
+    height: auto;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 7px 0 5px 0;
     font-size: 1.5em;
     border-radius: 50%;
     margin-right: 15px;
 }
 .info .infobox div p{
-    color: white;
+    color: black;
 }
 .info .infobox div a{
-    color: white;
+    color: black;
     text-decoration: none;
 }
 .map{
@@ -180,7 +184,7 @@ nav a:hover{
 footer{
     bottom: 0;
     padding-top: 10px;
-    background-color: red;
+    background-color: #f22738;
     color: white;
     font-family: 'Barlow Condensed', sans-serif;
 }
@@ -226,7 +230,7 @@ h3{
     text-decoration: none;
     letter-spacing: 1px;
     transition: all .5s ease;
-    background: red;
+    background: #f22738;
     color: white;
 }
 .button2:hover{
@@ -242,12 +246,12 @@ quick a{
     color: white;
 }
 .copyright{
-    background: red;
+    background: #f22738;
     padding: 30px;
 }
 
 .dropdown{
-    background-color: red;
+    background-color: #f22738;
     border: 1px solid white;
     padding: 10px;
     border-radius: 30px;

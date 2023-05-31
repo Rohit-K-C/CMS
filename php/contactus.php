@@ -41,14 +41,10 @@
             </div>
         </header>
         <div class="banner-area">
-            <!--<div class="item">
-                    <img src="image/contact.jpg">
-                </div>-->
             <div class="title">
                 <h2> Get in Touch</h2>
             </div>
             <div class="box">
-                <!--form-->
                 <div class="contact form">
                     <h3>Send a Message</h3>
                     <form>
@@ -158,9 +154,10 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>Hongshi Cement @ 2022.</p>
-            </div>
+
+        </div>
+        <div class="copyright">
+            <p>Hongshi Cement @ 2022.</p>
         </div>
     </footer>
 </body>
