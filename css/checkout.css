@@ -1,0 +1,117 @@
+
+.checkout-container{
+    position: relative;
+    top: 100px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    padding: 20px;
+}
+.your-order{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    padding: 20px;
+    width: 500px;
+    font-family: sans-serif;
+    border: 1px solid white;
+    
+}
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+th{
+    background-color: rgb(207, 200, 200);
+}
+
+.billing-details{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    padding: 20px;
+    width: 300px;
+    font-family: sans-serif;
+    border: 1px solid white;
+    
+}
+input[type='text'],
+input[type='number'],
+input[type='email']{
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+
+.payment-option{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid white;
+}
+.payment-option h1{
+    font-size: 30px;
+    font-family: sans-serif;
+}
+.payment-method{
+
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 10px;
+    width: 350px;
+    
+}
+.payment-method a{
+    text-decoration: none;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+}
+.payment-method a:hover{
+    transform: scale(1.1);
+    transition: all .40s;
+}
+
+#khalti-img{
+    width: 100px;
+    margin-top: 25px;
+
+
+}
+#cash-image{
+    width: 100px;
+    align-items: center;
+   
+}
+
+#cash-popup{
+    position: absolute;
+    top: 50px;
+    z-index: 99;
+    width: 300px;
+    background-color: green;
+    color: white;
+}
+/* #myForm{
+    display: none;
+} */

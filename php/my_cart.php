@@ -53,6 +53,7 @@
         <span style="font-size: 30px;">Cart</span>
         <hr id="cart_line">
     </div>
+
     <table>
         <tr>
             <th></th>
@@ -65,19 +66,27 @@
         <?php
 
         include "../php/connection.php";
-
-        $query = "SELECT * FROM cart";
+        session_start();
+        $user_email = $_SESSION['email'];
+        $getId = mysqli_query($conn, "SELECT id FROM users WHERE email='$user_email'");
+        while ($uid = mysqli_fetch_array($getId)) {
+            $user_id = $uid['id'];
+        }
+        $query = "SELECT * FROM cart WHERE user_id =  '$user_id'";
         $sql = mysqli_query($conn, $query);
         while ($row = mysqli_fetch_array($sql)) {
 
             $id = $row['id'];
-
+            $product_id =  $row['product_id'];
             $image = $row['image'];
             $name = $row['name'];
             $quantity = $row['quantity'];
             $price = $row['price'];
+            $subtotal = $price * $quantity;
+            $check_details[] = array($name, $quantity, $subtotal, $product_id);
 
         ?>
+
             <tr>
                 <td><a id="cartDel" href="delete_cart.php?user_id=<?php echo $id; ?>"><i class="fa-sharp fa-regular fa-circle-xmark"></i></a></td>
                 <td><img id="cart_image" src="<?php echo "$image"; ?>" alt="product_image"></td>
@@ -92,8 +101,6 @@
                             var xhr = new XMLHttpRequest();
                             xhr.open('POST', 'update_cart.php', true);
                             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-
                             xhr.onload = function() {
                                 if (xhr.status === 200) {
                                     var responseData = JSON.parse(xhr.responseText);
@@ -113,7 +120,8 @@
                         }
                     </script>
                 </td>
-                <td><?php echo "Rs. $price"; ?></td>
+                <td><?php echo "Rs. $price";
+                    ?></td>
                 <td>
                     <?php
 
@@ -124,12 +132,18 @@
                 </td>
             </tr>
         <?php
+
         }
         ?>
 
 
 
     </table>
+
+    <div class="checkout">
+
+        <a href="checkout.php?check_detail=<?php echo urlencode(json_encode($check_details)); ?>">Proceed to checkout</a>
+    </div>
 </body>
 
 </html>

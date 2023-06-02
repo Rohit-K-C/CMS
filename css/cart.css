@@ -38,3 +38,26 @@ td {
     color: red;
 
 }
+.checkout{
+  position: relative;
+  top: 250px;
+  width: 100%;
+  background-color: red;
+}
+.checkout a{
+  float: right;
+ display: flex;
+ text-align: center;
+ background-color: whitesmoke;
+ padding: 10px;
+ width: 150px;
+ margin-right: 255px;
+ justify-content: center;
+ text-decoration: none;
+ color: black;
+ border: 1px solid black;
+
+}
+.checkout a:hover{
+  background-color: rgb(195, 195, 178);
+}
