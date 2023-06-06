@@ -47,18 +47,107 @@
     <div class="checkout-container">
         <div class="billing-details">
             <h1>Billing Details</h1>
-            <form action="">
-                <input type="text" name="firstName" placeholder="First Name">
-                <input type="text" name="lastName" placeholder="Last Name">
-                <input type="text" name="country" value="Nepal" readonly>
-                <input type="text" name="street-address" placeholder="Street Address">
-                <input type="text" name="firstName" placeholder="First Name">
-                <input type="text" name="states" value="Bagmati" readonly>
-                <input type="number" name="postal-code" placeholder="Postcode/ZIP">
-                <input type="number" name="phone" placeholder="Phone">
-                <input type="email" name="email" placeholder="Email">
+            <?php
 
-            </form>
+            include "../php/connection.php";
+            $user_email = $_SESSION['email'];
+            $getId = mysqli_query($conn, "SELECT id FROM users WHERE email='$user_email'");
+            while ($row = mysqli_fetch_array($getId)) {
+                $user_id = $row['id'];
+            }
+            if (isset($_POST['submit'])) {
+
+                $firstName = $_POST['firstName'];
+                $lastName = $_POST['lastName'];
+                $country = $_POST['country'];
+                $street_address = $_POST['streetAddress'];
+                $state = $_POST['state'];
+                $postal_code = $_POST['postalCode'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $checkData = mysqli_query($conn, "SELECT COUNT(1) FROM billing_details where user_id='$user_id'");
+                $bill = mysqli_fetch_row($checkData);
+                if ($bill[0] > 0) {
+                    $sql = mysqli_query($conn, "UPDATE billing_details SET 
+                    firstName='$firstName',
+                    lastName='$lastName',
+                    country='$country',
+                    street_address='$street_address',
+                    state='$state',
+                    postal_code='$postal_code',
+                    email='$email',
+                    phone='$phone' 
+                    WHERE user_id='$user_id';
+                    ");
+                    if ($sql) {
+                        echo "<script>
+                            alert('Updated');
+                        </script>";
+                    }
+                } else {
+
+                    $sql = mysqli_query($conn, "INSERT INTO billing_details (firstName, lastName, country, street_address, state, postal_code, email, phone, user_id) VALUES  ('$firstName','$lastName','$country','$street_address','$state','$postal_code', '$email', '$phone', '$user_id')");
+                    if ($sql) {
+                        echo "<script>
+                            alert('Saved');
+                        </script>";
+                    }
+                }
+            }
+
+            ?>
+            <?php
+            $billSql = mysqli_query($conn, "SELECT * FROM billing_details WHERE user_id='$user_id'");
+            $bill = mysqli_fetch_array($billSql);
+
+            if ($bill) {
+                $firstName = $bill['firstname'] ?? '';
+                $lastName = $bill['lastname'] ?? '';
+                $country = $bill['country'] ?? '';
+                $street_address = $bill['street_address'] ?? '';
+                $postal_code = $bill['postal_code'] ?? '';
+                $email = $bill['email'] ?? '';
+                $phone = $bill['phone'] ?? '';
+
+            ?>
+                <form id="billingDetails" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <input type="text" name="firstName" placeholder="First Name" required value="<?php echo $firstName; ?>">
+                    <input type="text" name="lastName" placeholder="Last Name" required value="<?php echo $lastName; ?>">
+                    <input type="text" name="country" value="Nepal" readonly required value="<?php echo $country; ?>">
+                    <input type="text" name="streetAddress" placeholder="Street Address" value="<?php echo $street_address; ?>">
+                    <input type="text" name="state" value="Bagmati" readonly required>
+                    <input type="number" name="postalCode" placeholder="Postcode/ZIP" required value="<?php echo $postal_code; ?>">
+                    <input type="number" name="phone" placeholder="Phone" required value="<?php echo $phone; ?>">
+                    <input type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>">
+                    <input type="submit" name="submit" value="Save">
+
+                </form>
+            <?php
+
+            } else {
+            ?>
+                <form id="billingDetails" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <input type="text" name="firstName" placeholder="First Name" required>
+                    <input type="text" name="lastName" placeholder="Last Name" required>
+                    <input type="text" name="country" value="Nepal" readonly required>
+                    <input type="text" name="streetAddress" placeholder="Street Address">
+                    <input type="text" name="state" value="Bagmati" readonly required>
+                    <input type="number" name="postalCode" placeholder="Postcode/ZIP" required>
+                    <input type="number" name="phone" placeholder="Phone" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="submit" name="submit" value="Save">
+
+                </form>
+            <?php
+            }
+            ?>
+
+
+
+
+
+
+
         </div>
         <div class="your-order">
             <h1>Your Order</h1>
@@ -69,32 +158,67 @@
                 </tr>
 
                 <?php
-                if (!isset($_GET['check_detail'])) {
-                   echo "<tr><td><p style='color:red;'>Please add item.</p></td></tr>";
+                $query = "SELECT * FROM cart WHERE user_id = '$user_id'";
+                $sql = mysqli_query($conn, $query);
+                $row = mysqli_fetch_array($sql);
+
+                if (!$row) {
+                    echo "<tr><td><p style='color:red;'>Please add item.</p></td></tr>";
                 } else {
-                    $check_details = json_decode(urldecode($_GET['check_detail']), true);
+                    $subtotal = 0;
 
-                    if ($check_details === null) {
-                        echo "Error decoding JSON data.";
-                    } else {
-                        $subtotal = 0;
-
-                        foreach ($check_details as $details) {
-                            list($name, $quantity, $subtotalItem, $product_id) = $details;
-                            $subtotal += $subtotalItem;
-
-                            echo "<tr>";
-                            echo "<td>$name <b>x ($quantity)</b></td>";
-                            echo "<td>$subtotalItem</td>";
-                            echo "</tr>";
-                        }
+                    while ($row) {
+                        $id = $row['id'];
+                        $product_id = $row['product_id'];
+                        $image = $row['image'];
+                        $name = $row['name'];
+                        $quantity = $row['quantity'];
+                        $price = $row['price'];
+                        $subtotalItem = $price * $quantity;
+                        $subtotal += $subtotalItem;
 
                         echo "<tr>";
-                        echo "<td>Total </td>";
-                        echo "<td>$subtotal</td>";
+                        echo "<td>$name <b>x ($quantity)</b></td>";
+                        echo "<td>$subtotalItem</td>";
                         echo "</tr>";
+
+                        $row = mysqli_fetch_array($sql); // Fetch the next row
                     }
+
+                    echo "<tr>";
+                    echo "<td>Total </td>";
+                    echo "<td>$subtotal</td>";
+                    echo "</tr>";
                 }
+
+
+                // if (!isset($_GET['check_detail'])) {
+                //     echo "<tr><td><p style='color:red;'>Please add item.</p></td></tr>";
+                // } else {
+                //     $check_details = json_decode(urldecode($_GET['check_detail']), true);
+
+                //     if ($check_details === null) {
+                //         echo "Error decoding JSON data.";
+                //     } else {
+                //         $subtotal = 0;
+
+                //         foreach ($check_details as $details) {
+                //             list($name, $quantity, $subtotalItem, $product_id) = $details;
+                //             $subtotal += $subtotalItem;
+
+                //             echo "<tr>";
+                //             echo "<td>$name <b>x ($quantity)</b></td>";
+                //             echo "<td>$subtotalItem</td>";
+                //             echo "</tr>";
+                //         }
+
+                //         echo "<tr>";
+                //         echo "<td>Total </td>";
+                //         echo "<td>$subtotal</td>";
+                //         echo "</tr>";
+                //     }
+                // }
+
 
                 ?>
 
@@ -105,8 +229,23 @@
         <div class="payment-option">
             <h1>Select payment method</h1>
             <div class="payment-method">
-                <a href="../php/order.php?check=<?php echo urlencode(json_encode($check_details)); ?>"><img id="cash-image" src="../images/cash.png" alt=""></a>
-                <a href="#" id="payment-button"><img id="khalti-img" src="../images/khalti_logo.jpg" alt=""></a>
+                <?php
+
+                if (!isset($bill)) {
+                    echo "<p id='bill-error' style='color:red;'>Please fill the billng details.</p>";
+                ?>
+                    <a><img id="cash-image" src="../images/cash.png" alt=""></a>
+                    <a href="#" id="payment-button"><img id="khalti-img" src="../images/khalti_logo.jpg" alt=""></a>
+
+                <?php
+                } else {
+                ?>
+                    <a href="../php/order.php"><img id="cash-image" src="../images/cash.png" alt=""></a>
+                    <a href="#" id="payment-button"><img id="khalti-img" src="../images/khalti_logo.jpg" alt=""></a>
+
+                <?php
+                }
+                ?>
                 <script>
                     var config = {
                         // replace the publicKey with yours

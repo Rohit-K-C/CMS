@@ -115,3 +115,12 @@ input[type='email']{
 /* #myForm{
     display: none;
 } */
+
+#popup{
+    display: none;
+}
+#bill-error{
+    position: absolute;
+    top: 550px;
+    left: 95px ;
+}
