@@ -11,45 +11,16 @@
 </head>
 
 <body>
-    <header>
-        <div class="wrapper">
-            <div class="logo">
-                <h1><a href="#">Hongshi</a></h1>
-            </div>
-            <nav>
-                <div class="nav_menu">
-                    <a href="../php/admin.php" id="Home">Home</a>
-                    <a href="../php/add_product.php" id="add_product">Add Product</a>
-                    <a href="../php/all.php" id="index">All product</a>
-                    <select class="dropdown" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                        <option value="">
-                            <?php
-                            session_start();
-                            if ($_SESSION['name'] == null) {
 
-                                echo "<script>alert('Please Login!')
-                                    window.location.href='login.php';
-                                    </script>";
-                            }
-                            echo $_SESSION['name'];
-                            ?>
-                        </option>
-                        <option value="logout.php">Logout</option>
-                    </select>
-                </div>
-            </nav>
-        </div>
-    </header>
     <div class="table-content">
-
-
+        <span id="new_product">Add New Product</span><br>
         <table>
             <tr>
                 <th>Product Name
                 </th>
                 <th>Category
                 </th>
-                <th>Details
+                <th class="column">Details
                 </th>
                 <th>Quantity
                 </th>
@@ -109,6 +80,7 @@
                 $weight = $row['weight'];
                 $manufacturer = $row['manufacturer'];
                 $price = $row['price'];
+                
 
     ?>
                 <div class="formContaier">

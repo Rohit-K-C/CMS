@@ -20,7 +20,7 @@ while ($data = mysqli_fetch_array($sql)) {
     $subtotalItem = $price * $quantity;
     $subtotal += $subtotalItem;
 
-    $sql = mysqli_query($conn, "INSERT INTO my_order (name, quantity, subtotal, product_id, user_email) VALUES  ('$name','$quantity','$subtotalItem','$product_id','$user_email')");
+    $sql = mysqli_query($conn, "INSERT INTO my_order (name, quantity, subtotal, product_id, user_email, order_status) VALUES  ('$name','$quantity','$subtotalItem','$product_id','$user_email','request')");
 
     $delete = mysqli_query($conn, "DELETE FROM cart WHERE id='$id'");
 

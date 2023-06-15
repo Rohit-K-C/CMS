@@ -1,0 +1,29 @@
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+th{
+    background-color: rgb(207, 200, 200);
+}
+
+#title{
+    position: absolute;
+    top: 130px;
+    margin-left: 100px;
+}
+
+.table-container{
+    position: relative;
+    top: 160px;
+    left: 200px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}

@@ -33,8 +33,9 @@
                                 echo $_SESSION['name'];
                                 ?>
                             </option>
-                            <option value="logout.php">Logout</option>
                             <option value="my_cart.php">My Cart</option>
+                            <option value="my_order.php">My Order</option>
+                            <option value="logout.php">Logout</option>
                         </select>
                     </div>
                 </nav>
