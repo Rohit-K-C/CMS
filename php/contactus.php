@@ -48,37 +48,37 @@
             <div class="box">
                 <div class="contact form">
                     <h3>Send a Message</h3>
-                    <form>
+                    <form action="insert_contact.php" method="post">
                         <div class="formBox">
                             <div class="row50">
                                 <div class="inputBox">
                                     <span>First Name</span>
-                                    <input type="text" placeholder="fname">
+                                    <input type="text" placeholder="First Name" name="fName">
                                 </div>
                                 <div class="inputBox">
                                     <span>Last Name</span>
-                                    <input type="text" placeholder="lname">
+                                    <input type="text" placeholder="Last Name" name="lName">
                                 </div>
                             </div>
                             <div class="row50">
                                 <div class="inputBox">
                                     <span>Email</span>
-                                    <input type="text" placeholder="name@gmail.com">
+                                    <input type="email" placeholder="name@gmail.com" name="email">
                                 </div>
                                 <div class="inputBox">
                                     <span>Mobile</span>
-                                    <input type="text" placeholder="98XXXXXXXX">
+                                    <input type="number" placeholder="98XXXXXXXX" name="number">
                                 </div>
                             </div>
                             <div class="row100">
                                 <div class="inputBox">
                                     <span>Message</span>
-                                    <textarea placeholder="Write your message here..."></textarea>
+                                    <textarea placeholder="Write your message here..." name="message"></textarea>
                                 </div>
                             </div>
                             <div class="row100">
                                 <div class="inputBox">
-                                    <input type="submit" value="submit">
+                                    <input type="submit" name="submit" value="Submit">
                                 </div>
                             </div>
                         </div>
